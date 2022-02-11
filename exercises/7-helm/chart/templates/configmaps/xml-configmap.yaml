@@ -1,0 +1,14 @@
+apiVersion: v1
+data:
+  {{- $files := .Files }}
+  {{- range tuple "config.xml" }}
+  {{ . }}: |-
+        {{ $files.Get . }}
+  {{- end }}
+kind: ConfigMap
+metadata:
+  name: xml-config
+  labels:
+    app: xml-deployment
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}  

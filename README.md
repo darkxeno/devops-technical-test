@@ -158,7 +158,7 @@ Solution can be found here:
 
 ![Dockerfile](exercises/6-dockerfile/Dockerfile)
 
-Uses a docker multi-stage build to build the static assets and copy them over to the Ubuntu based image.
+Uses a docker multi-stage to build the static assets and copy them over to the Ubuntu based image.
 <br/>
 <br/>
 <br/>

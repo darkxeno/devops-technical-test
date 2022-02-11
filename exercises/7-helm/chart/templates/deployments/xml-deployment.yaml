@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xml-deployment
+  labels:
+    app: xml-deployment
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  annotations:
+    checksum/config: {{ include (print $.Template.BasePath "/configmaps/xml-configmap.xml") . | sha256sum }}
+
+spec:
+  replicas: {{ .Values.xml-deployment.replicas }}
+  revisionHistoryLimit: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+
+  template:
+    metadata:
+      name: xml-deployment
+      labels:
+        name: xml-deployment
+
+    spec:
+      volumes:
+        - name: xml-configmap-volume
+          configMap:
+            name: xml-config
+
+      containers:
+      - name: xml-deployment
+        image: {{ .Values.xml-deployment.image.registry }}/{{ .Values.xml-deployment.image.name }}:{{ .Values.xml-deployment.image.tag }}
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 500m
+            memory: 200Mi
+        ports:
+          - name: nginx-port
+            containerPort: 4000
+
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 4000
+          initialDelaySeconds: 30
+          periodSeconds: 30
+
+        volumeMounts:
+        - name: xml-configmap-volume
+          mountPath: /tmp/config.xml
+          subPath: config.xml
+
+        env:
+          - name: LOG_LEVEL
+            value: {{ .Values.xml-deployment.logLevel }}
+
+     
