@@ -30,7 +30,7 @@ use a drawing tool like www.draw.io or use any other format you consider
 appropriate.
 
 
-![alt text](images/Java Pipeline Overview.png)
+![Java Pipeline Overview](images/JavaPipelineOverview.png)
 
 Notes: For the overview color are an indication of whether some step are enabled or disabled depending on the commit or artifact procedence (originating branch)
 
