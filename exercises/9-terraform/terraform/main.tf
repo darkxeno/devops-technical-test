@@ -19,7 +19,7 @@ locals {
       }
       dev = {
         resource_group = {
-          name = "MAHSBC-RGP-0154-EWT0756-SHELL_APP_GLOBAL_TEST_WAF2_PILOT"
+          name = "MY-RESOURCE_GROUP"
           location = "northeurope"
         }          
       }

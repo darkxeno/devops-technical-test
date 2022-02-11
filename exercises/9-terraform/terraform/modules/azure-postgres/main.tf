@@ -17,7 +17,7 @@ resource "azurerm_postgresql_server" "postgres-server" {
   version                      = "11"
   ssl_enforcement_enabled      = true
 
-  public_network_access_enabled = false
+  #public_network_access_enabled = false // Still not supported
   ssl_minimal_tls_version_enforced = "TLS1_2"
 
   tags = var.additional_tags
