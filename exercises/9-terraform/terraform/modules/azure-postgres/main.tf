@@ -29,6 +29,4 @@ resource "azurerm_postgresql_database" "postgres-db" {
   server_name         = azurerm_postgresql_server.postgres-server.name
   charset             = "UTF8"
   collation           = "English_United States.1252"
-
-  tags = var.additional_tags
 }
