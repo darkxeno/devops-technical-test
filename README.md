@@ -156,7 +156,7 @@ Javascript) into a Linux image. Provide resolved script. Start Dockerfile with
 
 Solution can be found here:
 
-![Dockerfile](exercises/6 - dockerfile/Dockerfile)
+![Dockerfile](exercises/6-dockerfile/Dockerfile)
 
 Uses a docker multi-stage build to build the static assets and copy them over to the Ubuntu based image.
 <br/>
