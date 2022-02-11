@@ -168,6 +168,8 @@ Uses a docker multi-stage to build the static assets and copy them over to the U
 provide file config.xml in a cluster namespace. Provide the needed lines to add
 in a deployment template too. Provide resolved scripts.**
 
+![Solution](exercises/7-helm/)
+
 <br/>
 <br/>
 <br/>
@@ -176,7 +178,7 @@ in a deployment template too. Provide resolved scripts.**
 **Check this script: https://tinyurl.com/yywugvcb
 Are there any errors? If so, can you fix them? Provide resolved script.**
 
-
+![Solution](exercises/8-kubernetes/challenge.yaml)
 <br/>
 <br/>
 <br/>
@@ -185,6 +187,9 @@ Are there any errors? If so, can you fix them? Provide resolved script.**
 **Provide a Terraform template that provisions an Azure Postgres database and
 an Azure Virtual Machine in a private network. Provide resolved script.**
 
+![Solution](exercises/9-terraform/terraform)
+
+Unfortunately this solution has not been tested throughfully, because of the lack of an Azure user with 'Microsoft.Network/virtualNetworks/write' permissions.
 
 <br/>
 <br/>

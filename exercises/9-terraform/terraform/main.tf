@@ -28,7 +28,7 @@ locals {
    }
    environment = contains(keys(local.env), terraform.workspace) ? terraform.workspace : "default"
    // override default with the environment name (worspace name)
-   workspace       = "${merge(local.env["default"], local.env[local.environment])}"
+   workspace = "${merge(local.env["default"], local.env[local.environment])}"
 }
 
 module "azure-vm" {
