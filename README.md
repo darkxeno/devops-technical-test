@@ -5,55 +5,76 @@ DevOps Engineer Technical Test
 List of exercises
 -----------------
 
-1. Can you provide any of your code examples? Your public repos like Github,
-Gitlab, BitBucket, ...?
+## 1. 
+**Can you provide any of your code examples? Your public repos like Github, Gitlab, BitBucket, ...?**
+<br/>
+<br/>
 
-- Data analysis toolkit
-techs: docker, docker-compose, jupyter notebooks, nodejs, reactjs
-https://github.com/darkxeno/data-analysis
+- Data analysis toolkit<br/>
+techs: docker, docker-compose, jupyter notebooks, nodejs, reactjs<br/>
+https://github.com/darkxeno/data-analysis<br/>
 
-- Local K8S cluster
-techs: terraform, minikube, docker, helm, python
-https://github.com/darkxeno/local-k8s
+- Local K8S cluster<br/>
+techs: terraform, minikube, docker, helm, python<br/>
+https://github.com/darkxeno/local-k8s<br/>
 
-- Kubernetes workshop
-https://github.com/darkxeno/kubernetes-workshop
+- Kubernetes workshop<br/>
+https://github.com/darkxeno/kubernetes-workshop<br/>
 
-- Some fixes to use prometheus metrics on AWS cloudwatch
-https://github.com/darkxeno/prometheus-to-cloudwatch/commits/patch-1
+- Some fixes to use prometheus metrics on AWS cloudwatch<br/>
+https://github.com/darkxeno/prometheus-to-cloudwatch/commits/patch-1<br/>
 
+<br/>
+<br/>
+<br/>
 
-
-2. Describe or draw the pipeline journey of a Java application from development
+## 2. 
+**Describe or draw the pipeline journey of a Java application from development
 to publishing it into production. You can draw it on a paper and send a picture,
 use a drawing tool like www.draw.io or use any other format you consider
-appropriate.
-
+appropriate.**
+<br/>
+<br/>
 
 ![Java Pipeline Overview](images/JavaPipelineOverview.png)
 
 Notes: For the overview color are an indication of whether some step are enabled or disabled depending on the commit or artifact procedence (originating branch)
 
-![alt text](images/Detailed Deployment Process.png)
+<br/>
+<br/>
+
+![Detailed Deployment Process](images/DetailedDeploymentProcess.png)
 
 Notes: Color are an indications of the types of process performed (notification, deployment, tests, ...)
 
+<br/>
+<br/>
+
 Examples about other pipelines done in the past:
 
-![alt text](images/Kubernetes Pipeline.png)
+![Kubernetes Pipeline](images/KubernetesPipeline.png)
 Notes: azure devops (partial screenshot) of a kubernetes pipeline 
 
-![alt text](images/Frontend Web Pipeline.png)
+<br/>
+<br/>
+
+![Frontend Web Pipeline](images/FrontendWebPipeline.png)
 Notes: azure devops (partial screenshot) of a web frontend pipeline
 
-![alt text](images/Pipelines Architecture.png)
+<br/>
+<br/>
+
+![Pipelines Architecture](images/PipelinesArchitecture.png)
 Notes: diagram of the complete CI / CD process for a web (backend + frontend) project
 
+<br/>
+<br/>
+<br/>
 
-
-
-3. Explain what is the best way to deploy a change to 50 Linux servers?
-
+##3. 
+**Explain what is the best way to deploy a change to 50 Linux servers?**
+<br/>
+<br/>
 Depends on the type of change, for example if the change is a configuration change, one of the best approaches would be to include that change on the hardening process where the base VM image is produced and apply the change by rolling upgrades of all the VMs to that new version. 
 
 If there are no VMs, or there are not hardening / configuration change processes in place, or simply because a rolling upgrade is not acceptable because of the scope of the change, fleet configuration tools like ansible should be considered.
@@ -68,16 +89,23 @@ Summarizing, these are some attributes to consider when selecting the best mecha
 - Disruption of the regular workflow timelines or processes
 - Auditability / traceability, how can we better know what changes were applied in the past? how can we better organize our processes to avoid human error?
 
+<br/>
+<br/>
+<br/>
 
-4. Draw a production ready architecture of how you would deploy a Python
+## 4. 
+**Draw a production ready architecture of how you would deploy a Python
 application that stores its data in a Postgres database. Please provide all
 required elements in the diagram; network, security, system, ... Be creative ;)
 You can draw it on a paper and send a picture, use a drawing tool like draw.io
-or use any other format you consider appropriate.
+or use any other format you consider appropriate.**
 
-![alt text](images/Python Postgres Architecture 3D.png)
+<br/>
+<br/>
 
-![alt text](images/Python Postgres Architecture 2D.png)
+![Python Postgres Architecture 3D](images/PythonPostgresArchitecture 3D.png)
+
+![Python Postgres Architecture 2D](images/PythonPostgresArchitecture 2D.png)
 
 Assumptions:
 The python application doesnt depend on a long lasting runtime (to be well suited to a Lambda deployment scenario)
@@ -106,35 +134,53 @@ Amazon Aurora Serveless should be a very affordable and scalable way to provide 
 
 To obtain the best benefits from this architecture the Python application should be modularized or decomposed in microservices.
 
- 
+<br/>
+<br/>
+<br/>
 
-5. Provide example names of commercial services for IaaS, PaaS and SaaS.
+## 5. 
+**Provide example names of commercial services for IaaS, PaaS and SaaS.**
 
 IaaS: AWS ec2, Azure virtual machines, Azure virtual machine scale sets, ...
 PaaS: Azure function apps, Azure app services, AWS lambdas, AWS beanstalk, ...
 SaaS: Atlassian Cloud, Confluent Cloud, Elasticsearch Service, ...
 
+<br/>
+<br/>
+<br/>
 
-
-6. Provide a Dockerfile that instals a Nginx and static code (HTML, CSS &
+## 6. 
+**Provide a Dockerfile that instals a Nginx and static code (HTML, CSS &
 Javascript) into a Linux image. Provide resolved script. Start Dockerfile with
-"FROM ubuntu:latest" or "FROM centos:latest".
+"FROM ubuntu:latest" or "FROM centos:latest".**
 
+<br/>
+<br/>
+<br/>
 
-
-7. Create a basic Kubernetes configmap, in Helm format, template and values to
+## 7. 
+**Create a basic Kubernetes configmap, in Helm format, template and values to
 provide file config.xml in a cluster namespace. Provide the needed lines to add
-in a deployment template too. Provide resolved scripts.
+in a deployment template too. Provide resolved scripts.**
+
+<br/>
+<br/>
+<br/>
+
+## 8. 
+**Check this script: https://tinyurl.com/yywugvcb
+Are there any errors? If so, can you fix them? Provide resolved script.**
 
 
+<br/>
+<br/>
+<br/>
 
-8. Check this script: https://tinyurl.com/yywugvcb
-Are there any errors? If so, can you fix them? Provide resolved script.
-
-
-
-
-9. Provide a Terraform template that provisions an Azure Postgres database and
-an Azure Virtual Machine in a private network. Provide resolved script.
+## 9. 
+**Provide a Terraform template that provisions an Azure Postgres database and
+an Azure Virtual Machine in a private network. Provide resolved script.**
 
 
+<br/>
+<br/>
+<br/>
