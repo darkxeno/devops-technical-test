@@ -45,7 +45,7 @@ Notes: For the overview color are an indication of whether some step are enabled
 
 ![Detailed Deployment Process](images/DetailedDeploymentProcess.png)
 
-Notes: Color are an indications of the types of process performed (notification, deployment, tests, ...)
+Notes: Color are an indication of the types of process performed (notification, deployment, tests, ...)
 
 <br/>
 <br/>
@@ -71,7 +71,7 @@ Notes: diagram of the complete CI / CD process for a web (backend + frontend) pr
 <br/>
 <br/>
 
-##3. 
+## 3. 
 **Explain what is the best way to deploy a change to 50 Linux servers?**
 <br/>
 <br/>
@@ -154,6 +154,11 @@ SaaS: Atlassian Cloud, Confluent Cloud, Elasticsearch Service, ...
 Javascript) into a Linux image. Provide resolved script. Start Dockerfile with
 "FROM ubuntu:latest" or "FROM centos:latest".**
 
+Solution can be found here:
+
+![Dockerfile](exercises/6 - dockerfile/Dockerfile)
+
+Uses a docker multi-stage build to build the static assets and copy them over to the Ubuntu based image.
 <br/>
 <br/>
 <br/>
