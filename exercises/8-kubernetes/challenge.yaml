@@ -18,7 +18,7 @@ spec:
   ports:
   - port: 80
   selector:
-    app: guestbook # fixed, was guestbook-web
+    app: guestbook # fixed, was guestbook-web, needs to match pod labels
     tier: frontend
     
 ---
@@ -50,4 +50,4 @@ spec:
         - name: GET_HOSTS_FROM
           value: dns
         ports:
-        - containerPort: 80  # fixed, was 80 not matching the service port
+        - containerPort: 80  # fixed, was 80 not matching the service port and was the port in use inside of the container

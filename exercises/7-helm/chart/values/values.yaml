@@ -1,7 +1,9 @@
-xml-deployment:
+xmlDeployment:
   replicas: 2
   logLevel: debug
   image:
-    tag: master-latest
-    name: image
-    registry: XXXXXXXXXXXX.dkr.ecr.eu-west-1.amazonaws.com/registry
+    tag: latest
+    name: nginx
+
+
+xmlPath: 

@@ -7,11 +7,16 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
   annotations:
-    checksum/config: {{ include (print $.Template.BasePath "/configmaps/xml-configmap.xml") . | sha256sum }}
+    checksum/config: {{ include (print $.Template.BasePath "/configmaps/xml-configmap.yaml") . | sha256sum }}
 
 spec:
-  replicas: {{ .Values.xml-deployment.replicas }}
+  replicas: {{ required "xmlDeployment.replicas was not specified" .Values.xmlDeployment.replicas }}
   revisionHistoryLimit: 3
+
+  selector:
+    matchLabels:
+      name: xml-deployment
+
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -32,7 +37,7 @@ spec:
 
       containers:
       - name: xml-deployment
-        image: {{ .Values.xml-deployment.image.registry }}/{{ .Values.xml-deployment.image.name }}:{{ .Values.xml-deployment.image.tag }}
+        image: {{ required "xmlDeployment.image.name was not specified" .Values.xmlDeployment.image.name }}:{{ required "xmlDeployment.image.tag was not specified" .Values.xmlDeployment.image.tag }}
         resources:
           requests:
             cpu: 100m
@@ -42,14 +47,14 @@ spec:
             memory: 200Mi
         ports:
           - name: nginx-port
-            containerPort: 4000
+            containerPort: 80
 
         livenessProbe:
           httpGet:
             path: /
-            port: 4000
-          initialDelaySeconds: 30
-          periodSeconds: 30
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 20
 
         volumeMounts:
         - name: xml-configmap-volume
@@ -58,6 +63,6 @@ spec:
 
         env:
           - name: LOG_LEVEL
-            value: {{ .Values.xml-deployment.logLevel }}
+            value: {{ required "xmlDeployment.logLevel was not specified" .Values.xmlDeployment.logLevel }}
 
      
