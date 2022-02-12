@@ -1,4 +1,11 @@
 ---
+# added to simplify reproduction of the issue
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: web
+
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -9,7 +16,7 @@ metadata:
   namespace: web
 spec:
   ports:
-  - port: 80:8080 # fixed, was 80
+  - port: 80
   selector:
     app: guestbook # fixed, was guestbook-web
     tier: frontend
@@ -19,7 +26,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: backend
+  namespace: web  # fixed, was backend not matching the service namespace
 spec:
   selector:
     matchLabels:
@@ -43,4 +50,4 @@ spec:
         - name: GET_HOSTS_FROM
           value: dns
         ports:
-        - containerPort: 8080 
+        - containerPort: 80  # fixed, was 80 not matching the service port

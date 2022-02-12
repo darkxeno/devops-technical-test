@@ -145,9 +145,9 @@ Note: non working, non final terraform files, only ilustrative of the possibilit
 ## 5. 
 **Provide example names of commercial services for IaaS, PaaS and SaaS.**
 
-IaaS: AWS ec2, Azure virtual machines, Azure virtual machine scale sets, ...
-PaaS: Azure function apps, Azure app services, AWS lambdas, AWS beanstalk, ...
-SaaS: Atlassian Cloud, Confluent Cloud, Elasticsearch Service, ...
+*IaaS*: AWS ec2, Azure virtual machines, Azure virtual machine scale sets, ...<br/>
+*PaaS*: Azure function apps, Azure app services, AWS lambdas, AWS beanstalk, ...<br/>
+*SaaS*: Atlassian Cloud, Confluent Cloud, Elasticsearch Service, ...<br/>
 
 <br/>
 <br/>
@@ -183,6 +183,11 @@ in a deployment template too. Provide resolved scripts.**
 Are there any errors? If so, can you fix them? Provide resolved script.**
 
 [Solution](exercises/8-kubernetes/challenge.yaml)
+
+A test script can be found here:
+
+[Bash Script](exercises/8-kubernetes/test.sh)
+
 <br/>
 <br/>
 <br/>
