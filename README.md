@@ -50,7 +50,7 @@ Notes: Color are an indication of the types of process performed (notification, 
 <br/>
 <br/>
 
-Examples about other pipelines done in the past:
+Examples of other pipelines done in the past:
 
 ![Kubernetes Pipeline](images/KubernetesPipeline.png)
 Notes: azure devops (partial screenshot) of a kubernetes pipeline 
@@ -103,15 +103,15 @@ or use any other format you consider appropriate.**
 <br/>
 <br/>
 
-![Python Postgres Architecture 3D](images/PythonPostgresArchitecture 3D.png)
+![Python Postgres Architecture 3D](images/PythonPostgresArchitecture3D.png)
 
-![Python Postgres Architecture 2D](images/PythonPostgresArchitecture 2D.png)
+![Python Postgres Architecture 2D](images/PythonPostgresArchitecture2D.png)
 
 Assumptions:
 The python application doesn't depend on a long-lasting runtime (to be well suited to a Lambda deployment scenario)
 The python application is a webservices based application (preferably using HTTPS)
 
-Component list:
+*Component list:*
 
 - 1 VPC
 - 1 Internet Gateway
@@ -126,7 +126,7 @@ Component list:
 - 1 API Gateway v2
 - 1 S3 Bucket for the deployment of the Python functions
 
-Description:
+*Description:*
 
 The traffic from the internet flows in using the API Gateway that invokes the Lambda functions distributed across 3 availability zones. The Python lambdas can access the Amazon Aurora connected to the same 3 private subnets (or 3 new additional private subnets if a different Network ACL is necessary). The security groups should allow Http traffic to reach the Lambdas and the Aurora security group should be configured to only allow the Lambdas (by sec. group referencing).
 
