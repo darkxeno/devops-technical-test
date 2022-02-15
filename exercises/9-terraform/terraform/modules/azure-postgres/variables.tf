@@ -18,7 +18,6 @@ variable "environment_name" {
 
 variable "admin_username" {
   type = string
-  sensitive = true
 }
 
 variable "admin_password" {
